@@ -1,0 +1,20 @@
+.TH CLIENT 1 "1 Dec 2021"
+.SH NAME
+client /- Receive input and send messages to server
+.SH SYNOPSIS
+/client port ip-address
+.SH DESCRIPTION
+The client receives input as either in a file or from the keyboard and sends a message to the server if the input commandis T<n>, else it sleeps if the command is S<n>.
+.SH FILES
+.TP
+/Input File
+Might need a file as input with the commands for the client.
+.SH "SEE ALSO"
+server.man
+.SH BUGS
+No bugs identified. 
+
+
+
+
+

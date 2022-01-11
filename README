@@ -1,0 +1,54 @@
+Name: Gurbani Baweja
+ccid: gurbani 
+
+Files Submitted: 
+* server.cpp - This file contains the code for a server that interacts with multiple clients using socket programming. 
+               It takes the port number from the terminal, receives messages from clients and sends back messages to clients 
+               as a receipt of acknowledgement.
+* client.cpp - This file contains the code for a client that sends messages to a server or sleeps for sometime. It takes the port number and ip
+               address from the terminal. It also takes commands via input either through keyboard or a file. 
+
+* tands.cpp -  This file contains the code for the Trans(int n) function and Sleep (int n) function implemented by the server
+               and client respectively.
+
+* tands.h -    This file has been created for make purpose. 
+
+* client.man -  Source of man page for client. 
+* server.man -  Source of man page for server.
+* makefile -    For compilation.
+
+
+Assumptions: 
+*When the client recieves a command regarding Trans, for eg: T5, it only send 5 as the message to the server. I moved
+ the pointer from T to the next char following T and sent the rest of the char aaray as the message to the server. This
+ was done so that the server on its end receives a char array that can be easy converted to int and be sent to Trans() 
+ in order to avoid any bugs on the server side. 
+
+Known issues: 
+*Sometimes make generates an error- make: Nothing to be done for 'all'. In this case using a "make clean" solves the problem.
+
+Summary of how the assignment was solved: 
+* The problem was solved using socket programming. Since multi-threading was not permitted, I used accept() to deal with multiple
+  clients and kept track of them via arrays and for loops. On the client side, the messages were read until EOF and if
+  the command was for Trans(), a message was sent to the server using the approach mentioned in the assumptions and if 
+  the command was for Sleep(), the client slept for a while. The server received messages from various clients about the 
+  client name after a connection was accepted and recieved transactions to be processed via a for loop. The server also sent message
+  to the client after completing the transaction, as a reciept of acknowledgement. 
+
+Instructions for compilation: 
+* Step 1: Unzip the tar folder and do a make. 
+* Step 2: On the machine which will run the server perform - ./server portnumber
+* Step 3: On the machines which will run the client perform - ./client portnumber ip-address
+
+Here, the portnumber should be the same for clients and server and ip-address should be of the machine on which the server is running. 
+
+References: 
+* Server code adapted from - https://www.geeksforgeeks.org/socket-programming-in-cc-handling-multiple-clients-on-server-without-multi-threading/
+* Client code adapted from - https://www.binarytides.com/server-client-example-c-sockets-linux/
+* For current time - https://stackoverflow.com/questions/30702759/implementing-a-timer-in-c and https://stackoverflow.com/questions/6012663/get-unix-timestamp-with-c
+* For elapsed time - https://stackoverflow.com/questions/26112839/c-find-elapsed-time-in-c-linux
+* For finding host name - https://www.geeksforgeeks.org/c-program-display-hostname-ip-address/
+* For generating man pages - https://www.linuxjournal.com/article/1158
+* For creating a pdf for man pages - https://askubuntu.com/questions/962558/is-there-a-way-to-print-info-man-pages-to-pdf
+
+Thanks for the assistance in implemeting multiple clients and the server timer to the TAs: Chirag Daryani, Rohan Verma and Mohammadreza Samadi. 

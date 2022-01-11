@@ -1,0 +1,19 @@
+.TH SERVER 1 "1 Dec 2021"
+.SH NAME
+server /- Receive message from multiple clients and send a recipt when message is received 
+.SH SYNOPSIS
+/server port 
+.SH DESCRIPTION
+The server receives messages from multiple clients, processes the command by calling the functions Trans(int num) using the int num sent by the client(s). Once the command is executed, it send a receipt back to the client acknowledging that message is received and processed. 
+.SH FILES
+.TP
+/None required
+.SH "SEE ALSO"
+client.man
+.SH BUGS
+No bugs identified. 
+
+
+
+
+
