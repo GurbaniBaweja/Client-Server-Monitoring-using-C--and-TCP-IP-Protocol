@@ -1,7 +1,6 @@
-Name: Gurbani Baweja
-ccid: gurbani 
+Author: Gurbani Baweja
 
-Files Submitted: 
+Files: 
 * server.cpp - This file contains the code for a server that interacts with multiple clients using socket programming. 
                It takes the port number from the terminal, receives messages from clients and sends back messages to clients 
                as a receipt of acknowledgement.
@@ -27,7 +26,7 @@ Assumptions:
 Known issues: 
 *Sometimes make generates an error- make: Nothing to be done for 'all'. In this case using a "make clean" solves the problem.
 
-Summary of how the assignment was solved: 
+Summary of how the problem was solved: 
 * The problem was solved using socket programming. Since multi-threading was not permitted, I used accept() to deal with multiple
   clients and kept track of them via arrays and for loops. On the client side, the messages were read until EOF and if
   the command was for Trans(), a message was sent to the server using the approach mentioned in the assumptions and if 
@@ -50,5 +49,3 @@ References:
 * For finding host name - https://www.geeksforgeeks.org/c-program-display-hostname-ip-address/
 * For generating man pages - https://www.linuxjournal.com/article/1158
 * For creating a pdf for man pages - https://askubuntu.com/questions/962558/is-there-a-way-to-print-info-man-pages-to-pdf
-
-Thanks for the assistance in implemeting multiple clients and the server timer to the TAs: Chirag Daryani, Rohan Verma and Mohammadreza Samadi. 
