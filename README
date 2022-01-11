@@ -27,7 +27,7 @@ Known issues:
 *Sometimes make generates an error- make: Nothing to be done for 'all'. In this case using a "make clean" solves the problem.
 
 Summary of how the problem was solved: 
-* The problem was solved using socket programming. Since multi-threading was not permitted, I used accept() to deal with multiple
+* The problem was solved using socket programming. I used accept() to deal with multiple
   clients and kept track of them via arrays and for loops. On the client side, the messages were read until EOF and if
   the command was for Trans(), a message was sent to the server using the approach mentioned in the assumptions and if 
   the command was for Sleep(), the client slept for a while. The server received messages from various clients about the 
@@ -35,7 +35,7 @@ Summary of how the problem was solved:
   to the client after completing the transaction, as a reciept of acknowledgement. 
 
 Instructions for compilation: 
-* Step 1: Unzip the tar folder and do a make. 
+* Step 1: Perform a make. 
 * Step 2: On the machine which will run the server perform - ./server portnumber
 * Step 3: On the machines which will run the client perform - ./client portnumber ip-address
 
